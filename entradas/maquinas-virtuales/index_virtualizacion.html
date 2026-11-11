@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Máquinas virtuales | Mi rincón tecnológico</title>
+    <link rel="stylesheet" href="../../css/estilos.css">
+</head>
+
+<body>
+    <header>
+        <p>Mi rincón tecnológico</p>
+
+        <nav aria-label="Navegación principal">
+            <a href="../../index.html">Inicio</a>
+        </nav>
+    </header>
+
+    <main>
+        <article>
+            <h1>Qué es una máquina virtual</h1>
+            <figure>
+                <img src="../../imagenes/virtualizacion.jpg" alt="Ubuntu ejecutándose en una máquina virtual de VirtualBox">
+                <figcaption>
+                    Una máquina virtual permite practicar con otro sistema operativo.
+                </figcaption>
+            </figure>
+
+            <p>Una máquina virtual es un entorno que permite ejecutar un sistema operativo utilizando recursos de un ordenador físico, como memoria RAM, procesador y almacenamiento.</p>
+
+            <h2>El anfitrión y el invitado</h2>
+            <p>El ordenador físico que proporciona los recursos se llama anfitrión. El sistema operativo que se ejecuta dentro de la máquina virtual se llama invitado.</p>
+
+            <h2>La función del hipervisor</h2>
+            <p>El hipervisor es el software que permite crear y ejecutar máquinas virtuales y gestionar su acceso a los recursos del equipo físico.</p>
+
+            <ul>
+                <li>Tipo 1: se ejecuta directamente sobre el hardware, sin un sistema operativo anfitrión convencional debajo.</li>
+                <li>Tipo 2: se ejecuta sobre un sistema operativo anfitrión, como una aplicación.</li>
+            </ul>
+
+            <h2>Un ejemplo con Windows y Ubuntu</h2>
+            <p>Si utilizas VirtualBox en Windows para ejecutar Ubuntu, tu ordenador proporciona el hardware, Windows es el sistema operativo anfitrión, VirtualBox actúa como hipervisor de tipo 2 y Ubuntu es el sistema invitado.</p>
+
+            <h2>Para qué sirve</h2>
+            <p>Permite practicar con otros sistemas operativos y probar configuraciones en un entorno separado. Por ejemplo, puedes aprender comandos de Ubuntu sin sustituir la instalación de Windows de tu ordenador.</p>
+
+            <h2>Los recursos son limitados</h2>
+            <p>El anfitrión y las máquinas virtuales comparten los recursos físicos. Por eso, debemos dejar suficiente memoria RAM y capacidad de procesamiento para que el anfitrión siga funcionando correctamente.</p>
+        </article>
+
+        <p><a href="../../index.html">Volver al inicio</a></p>
+    </main>
+
+    <footer>
+        <p>Mi rincón tecnológico · Tecnología para principiantes</p>
+    </footer>
+</body>
+
+</html>
