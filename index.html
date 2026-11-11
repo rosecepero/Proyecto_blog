@@ -11,18 +11,80 @@
 <body>
     <header>
         <h1>Mi rincón tecnológico</h1>
-        <p>Un espacio para aprender y compartir.</p>
         <nav aria-label="Navegación principal">
-            <a href="./index.html">Inicio</a>
+            <a href="./index.html" aria-current="page">Inicio</a>
             <a href="./entradas/primera-pagina-web/index.html">Cómo funciona la web</a>
-            <a href="./entradas/reconocer-phishing/index.html">Phishing</a>
+            <a href="./entradas/reconocer-phishing/index.html">Seguridad</a>
             <a href="./entradas/maquinas-virtuales/index_virtualizacion.html">Máquinas virtuales</a>
+            <a href="./acerca/index_acerca.html">Acerca de mí</a>
         </nav>
+        <script src="./script.js" defer></script>
     </header>
 
     <main>
-        <h2>Bienvenida a mi blog</h2>
-        <p>Esta es mi primera página creada con HTML.</p>
+        <section class="carrusel" aria-label="Entradas destacadas">
+            <div class="destacado">
+                <div class="destacado-texto">
+                    <p id="destacado-tema" class="destacado-tema">Web</p>
+                    <h2 id="destacado-titulo">¿Qué ocurre cuando abres una página web?</h2>
+                    <p id="destacado-resumen">
+                        Sigue el viaje de una petición desde tu navegador hasta el servidor.
+                    </p>
+                    <a id="destacado-enlace" href="./entradas/primera-pagina-web/index.html">
+                Leer entrada →
+            </a>
+                </div>
+
+                <img id="destacado-imagen" src="./imagenes/web.jpg" alt="Ilustración sobre cómo funciona la web">
+            </div>
+
+            <div id="carrusel-controles" class="carrusel-controles" hidden>
+                <button id="anterior" type="button" aria-label="Entrada anterior">←</button>
+                <span id="carrusel-posicion" aria-live="polite">1 de 3 · Web</span>
+                <button id="siguiente" type="button" aria-label="Entrada siguiente">→</button>
+            </div>
+        </section>
+        <section aria-labelledby="titulo-entradas">
+            <h2 id="titulo-entradas">Explora el blog</h2>
+
+            <div class="lista-entradas">
+                <article class="tarjeta-entrada">
+                    <img class="miniatura" src="./imagenes/web.jpg" alt="">
+                    <div>
+                        <h3>
+                            <a href="./entradas/primera-pagina-web/index.html">
+                        Cómo funciona la web
+                    </a>
+                        </h3>
+                        <p>Sigue el viaje de una petición desde tu navegador hasta el servidor.</p>
+                    </div>
+                </article>
+
+                <article class="tarjeta-entrada">
+                    <img class="miniatura" src="./imagenes/phishing.jpg" alt="">
+                    <div>
+                        <h3>
+                            <a href="./entradas/reconocer-phishing/index.html">
+                        Cómo reconocer un correo de phishing
+                    </a>
+                        </h3>
+                        <p>Aprende qué detalles revisar antes de confiar en un correo sospechoso.</p>
+                    </div>
+                </article>
+
+                <article class="tarjeta-entrada">
+                    <img class="miniatura" src="./imagenes/virtualizacion.jpg" alt="">
+                    <div>
+                        <h3>
+                            <a href="./entradas/maquinas-virtuales/index_virtualizacion.html">
+                        Qué es una máquina virtual
+                    </a>
+                        </h3>
+                        <p>Descubre cómo puedes ejecutar Ubuntu dentro de Windows y qué papel cumple VirtualBox.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
     </main>
     <script src="./script.js"></script>
 </body>
