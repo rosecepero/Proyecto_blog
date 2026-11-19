@@ -1,3 +1,5 @@
+/* 1. Estilos generales y páginas interiores */
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -90,61 +92,18 @@ figcaption {
     color: #526176;
 }
 
-.lista-entradas {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
-    gap: 16px;
-}
 
-.tarjeta-entrada {
-    display: grid;
-    grid-template-columns: 76px 1fr;
-    align-items: start;
-    gap: 14px;
-    padding: 16px;
-    border: 1px solid #e0e8f7;
-    border-radius: 16px;
-    background-color: #f6f8ff;
-}
-
-.tarjeta-entrada h3 {
-    margin: 0 0 6px;
-    line-height: 1.3;
-}
-
-.tarjeta-entrada p {
-    margin: 0;
-    font-size: 0.95rem;
-    line-height: 1.5;
-}
-
-.miniatura {
-    display: block;
-    width: 76px;
-    height: 76px;
-    object-fit: cover;
-    border-radius: 12px;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-    .miniatura {
-        transition: transform 220ms ease;
-    }
-    .tarjeta-entrada:hover .miniatura,
-    .tarjeta-entrada:focus-within .miniatura {
-        transform: translateY(-6px) scale(1.06);
-    }
-}
+/* 2. Carrusel de la portada */
 
 .carrusel {
-    margin-bottom: 24px;
-    padding-bottom: 24px;
+    margin-bottom: 10px;
+    padding-bottom: 8px;
     border-bottom: 1px solid #e0e8f7;
 }
 
 .destacado {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1.2fr;
     overflow: hidden;
     border-radius: 18px;
     background: #edf3ff;
@@ -152,25 +111,52 @@ figcaption {
 }
 
 .destacado-texto {
-    padding: clamp(20px, 4vw, 36px);
+    padding: 20px 24px;
+    background-color: #662ec7;
+    color: #ffffff;
+}
+
+.pagina-inicio .destacado-texto p {
+    margin: 8px 0;
+    line-height: 1.4;
 }
 
 .destacado-tema {
     margin: 0 0 8px;
-    color: #1845cf;
+    color: #d8fa42;
     font-weight: bold;
+}
+
+#destacado-enlace {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 16px;
+    border-radius: 6px;
+    background-color: #d8fa42;
+    color: #21152c;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#destacado-enlace:hover {
+    background-color: #c4eb25;
+}
+
+#destacado-enlace:focus-visible {
+    outline: 2px solid white;
+    outline-offset: 3px;
 }
 
 .destacado h2 {
     margin: 0;
-    font-size: clamp(1.65rem, 4vw, 2.5rem);
+    font-size: clamp(1.25rem, 2.1vw, 1.75rem);
 }
 
 .destacado img {
     display: block;
     width: 100%;
-    height: 100%;
-    min-height: 220px;
+    height: 240px;
+    min-height: 0;
     object-fit: cover;
 }
 
@@ -179,7 +165,7 @@ figcaption {
     justify-content: center;
     align-items: center;
     gap: 16px;
-    margin-top: 14px;
+    margin-top: 8px;
 }
 
 .carrusel-controles button {
@@ -203,6 +189,490 @@ figcaption {
         grid-template-columns: 1fr;
     }
     .destacado img {
-        height: 220px;
+        height: 180px;
+    }
+}
+
+
+/* 3. Distribución de la portada */
+
+.pagina-inicio {
+    background-color: #faf8fc;
+    color: #21152c;
+}
+
+.pagina-inicio .cabecera-inicio {
+    position: static;
+    display: block;
+    padding: 28px 32px 20px;
+    margin-left: 190px;
+    background: transparent;
+    backdrop-filter: none;
+    border: 0;
+}
+
+.pagina-inicio .cabecera-inicio h1 {
+    font-size: clamp(1.6rem, 2.7vw, 2.5rem);
+}
+
+.pagina-inicio main {
+    max-width: 1200px;
+    margin: 0 32px 40px 222px;
+    padding: 0;
+    background: transparent;
+    border-radius: 0;
+}
+
+
+/* 4. Menú lateral y sección seleccionada */
+
+.pagina-inicio .menu-lateral {
+    position: fixed;
+    top: 140px;
+    left: 16px;
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    flex-wrap: nowrap;
+    gap: 8px;
+    width: 158px;
+    padding: 12px 0;
+    border-radius: 12px;
+    background-color: rgba(29, 26, 34, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 12px 30px rgba(29, 26, 34, 0.16);
+}
+
+.pagina-inicio .menu-lateral a {
+    padding: 12px 14px;
+    color: #f5f5f7;
+    border: 0;
+    text-decoration: none;
+    line-height: 1.4;
+}
+
+.pagina-inicio .menu-lateral a:hover,
+.pagina-inicio .menu-lateral a:focus-visible,
+.pagina-inicio .menu-lateral a.vista-activa {
+    color: #d8fa42;
+    text-shadow: 0 0 5px rgba(216, 250, 66, 0.75), 0 0 14px rgba(216, 250, 66, 0.4);
+}
+
+.pagina-inicio .menu-lateral a:focus-visible {
+    outline: 2px solid #d8fa42;
+    outline-offset: -4px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .pagina-inicio .menu-lateral a {
+        transition: color 160ms ease, text-shadow 160ms ease;
+    }
+}
+
+
+/* Adaptación a pantallas pequeñas */
+
+@media (max-width: 800px) {
+    .pagina-inicio .cabecera-inicio {
+        margin-left: 0;
+        padding: 20px 16px;
+    }
+    .pagina-inicio .menu-lateral {
+        position: static;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: auto;
+        margin-top: 16px;
+        padding: 8px;
+    }
+    .pagina-inicio main {
+        margin: 0 16px 32px;
+    }
+}
+
+
+/* 5. Franja de temas y colores por sección */
+
+.explorador {
+    --color-uno: #662ec7;
+    --color-dos: #d8fa42;
+    --color-tres: #ff8a45;
+    --texto-uno: #ffffff;
+}
+
+.explorador[data-seccion="web"] {
+    --color-uno: #662ec7;
+    --color-dos: #b68af5;
+    --color-tres: #e2cffb;
+}
+
+.explorador[data-seccion="seguridad"] {
+    --color-uno: #d8fa42;
+    --color-dos: #c5ed48;
+    --color-tres: #afe045;
+    --texto-uno: #21152c;
+}
+
+.explorador[data-seccion="virtualizacion"] {
+    --color-uno: #ff8a45;
+    --color-dos: #ffab75;
+    --color-tres: #ffd1ae;
+    --texto-uno: #21152c;
+}
+
+.explorador[data-seccion="acerca"] {
+    --color-uno: #662ec7;
+    --color-dos: #d6bef7;
+    --color-tres: #eee4fb;
+}
+
+.lista-temas {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 4px;
+}
+
+.tema-blog {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    min-width: 0;
+    background-color: var(--color-uno);
+    color: var(--texto-uno);
+    text-decoration: none;
+}
+
+.tema-blog:nth-child(2) {
+    background-color: var(--color-dos);
+    color: #21152c;
+}
+
+.tema-blog:nth-child(3) {
+    background-color: var(--color-tres);
+    color: #21152c;
+}
+
+.tema-blog img {
+    display: block;
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+}
+
+.tema-blog-texto {
+    flex: 1;
+    padding: 18px;
+}
+
+.tema-blog h3 {
+    margin: 0 0 10px;
+    font-size: 1.25rem;
+    line-height: 1.3;
+}
+
+.tema-blog p {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.tema-blog-flecha {
+    display: inline-block;
+    margin-top: 16px;
+    font-size: 1.6rem;
+}
+
+.tema-blog:focus-visible {
+    outline: 3px solid #21152c;
+    outline-offset: -3px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .tema-blog img,
+    .tema-blog-flecha {
+        transition: transform 200ms ease;
+    }
+    .tema-blog:hover img,
+    .tema-blog:focus-visible img {
+        transform: scale(1.04);
+    }
+    .tema-blog:hover .tema-blog-flecha,
+    .tema-blog:focus-visible .tema-blog-flecha {
+        transform: translateX(6px);
+    }
+}
+
+@media (max-width: 650px) {
+    .lista-temas {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* 6. Medidas compactas de la portada en ordenador */
+
+@media (min-width: 801px) {
+    .pagina-inicio #titulo-entradas {
+        margin: 0 0 4px;
+        font-size: 1.4rem;
+    }
+    .pagina-inicio #descripcion-seccion {
+        margin: 0 0 10px;
+        line-height: 1.4;
+    }
+    .pagina-inicio .tema-blog img {
+        height: 85px;
+    }
+    .pagina-inicio .tema-blog-texto {
+        padding: 10px 14px;
+    }
+    .pagina-inicio .tema-blog h3 {
+        margin-bottom: 6px;
+        font-size: 1.1rem;
+    }
+    .pagina-inicio .tema-blog p {
+        font-size: 0.9rem;
+        line-height: 1.35;
+    }
+    .pagina-inicio .tema-blog-flecha {
+        margin-top: 6px;
+        font-size: 1.3rem;
+    }
+    .pagina-inicio main {
+        margin-bottom: 8px;
+    }
+}
+
+
+/* Página interior de Seguridad */
+
+.pagina-seguridad {
+    background-color: #d8fa42;
+    color: #21152c;
+    padding: 24px;
+}
+
+.pagina-seguridad main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 32px;
+    background-color: #faf8fc;
+    border-radius: 0 0 16px 16px;
+}
+
+@media (max-width: 650px) {
+    .pagina-seguridad {
+        padding: 12px;
+    }
+    .pagina-seguridad main {
+        padding: 20px;
+    }
+}
+
+
+/* Barra superior de la ventana de Seguridad */
+
+.pagina-seguridad .barra-seccion {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 16px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 16px 32px;
+    background: #202027;
+    color: #ffffff;
+    border: 0;
+    border-radius: 16px 16px 0 0;
+}
+
+.barra-seccion a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.barra-seccion a:hover {
+    color: #d8fa42;
+}
+
+.nombre-seccion {
+    color: #d8fa42;
+    font-weight: bold;
+    text-shadow: 0 0 5px rgba(216, 250, 66, 0.75), 0 0 14px rgba(216, 250, 66, 0.4);
+}
+
+.selector-seccion {
+    position: relative;
+    justify-self: end;
+}
+
+.selector-seccion summary {
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.selector-seccion nav {
+    position: absolute;
+    top: calc(100% + 12px);
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
+    width: 190px;
+    padding: 12px;
+    background: #202027;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.selector-seccion nav a {
+    padding: 8px;
+}
+
+.barra-seccion a:focus-visible,
+.selector-seccion summary:focus-visible {
+    outline: 2px solid #d8fa42;
+    outline-offset: 4px;
+}
+
+@media (max-width: 650px) {
+    .pagina-seguridad .barra-seccion {
+        grid-template-columns: 1fr auto;
+        padding: 16px 20px;
+    }
+    .nombre-seccion {
+        justify-self: end;
+    }
+    .selector-seccion {
+        grid-column: 1 / -1;
+    }
+}
+
+
+/* Temas de la página de Seguridad */
+
+.pagina-seguridad .temas-seccion {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 4px;
+    margin-bottom: 28px;
+}
+
+.tema-seccion {
+    position: relative;
+    display: flex;
+    align-items: end;
+    min-height: 130px;
+    overflow: hidden;
+    padding: 14px;
+    background-color: #202027;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.tema-seccion img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.tema-seccion::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.85));
+}
+
+.tema-seccion span {
+    position: relative;
+    z-index: 1;
+    font-weight: bold;
+    line-height: 1.3;
+}
+
+.tema-seccion:hover span,
+.tema-seccion:focus-visible span {
+    color: #d8fa42;
+}
+
+.tema-seccion:focus-visible {
+    outline: 3px solid #d8fa42;
+    outline-offset: -3px;
+}
+
+.pagina-seguridad [id] {
+    scroll-margin-top: 150px;
+}
+
+@media (max-width: 650px) {
+    .pagina-seguridad .temas-seccion {
+        grid-template-columns: 1fr;
+    }
+    .tema-seccion {
+        min-height: 80px;
+    }
+}
+
+
+/* Ejercicio del correo ficticio */
+
+.ejercicio-correo {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    align-items: start;
+    gap: 24px;
+    margin-top: 20px;
+}
+
+.correo-ficticio {
+    padding: 24px;
+    background-color: #f1e9dc;
+    border: 1px solid #d9cdbb;
+    border-radius: 8px;
+    overflow-wrap: anywhere;
+}
+
+.aviso-ejemplo {
+    margin-top: 0;
+    color: #554a3d;
+    font-size: 0.85rem;
+}
+
+.enlace-simulado {
+    color: #174ea6;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.boton-pistas {
+    padding: 12px 20px;
+    border: 0;
+    border-radius: 8px;
+    background-color: #202027;
+    color: #d8fa42;
+    font: inherit;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.boton-pistas:focus-visible {
+    outline: 3px solid #662ec7;
+    outline-offset: 3px;
+}
+
+#pistas-correo li {
+    margin-bottom: 16px;
+}
+
+@media (max-width: 650px) {
+    .ejercicio-correo {
+        grid-template-columns: 1fr;
     }
 }

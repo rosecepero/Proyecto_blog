@@ -6,20 +6,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cómo reconocer el phishing | Mi rincón tecnológico</title>
     <link rel="stylesheet" href="../../css/estilos.css">
+    <script src="../../seguridad.js" defer></script>
 </head>
 
-<body>
-    <header>
-        <p>Mi rincón tecnológico</p>
+<body class="pagina-seguridad">
+    <header class="barra-seccion">
+        <a href="../../index.html">← Inicio</a>
 
-        <nav aria-label="Navegación principal">
-            <a href="../../index.html">Inicio</a>
-        </nav>
+        <span class="nombre-seccion">Seguridad</span>
+
+        <details class="selector-seccion">
+            <summary>Cambiar de sección</summary>
+
+            <nav aria-label="Cambiar de sección">
+                <a href="../primera-pagina-web/index.html">Web</a>
+                <a href="../maquinas-virtuales/index_virtualizacion.html">
+                Virtualización
+            </a>
+                <a href="../../acerca/index_acerca.html">Acerca de mí</a>
+            </nav>
+        </details>
     </header>
 
     <main>
+        <nav class="temas-seccion" aria-label="Temas de Seguridad">
+            <a href="#reconoce-phishing" class="tema-seccion">
+                <img src="../../imagenes/phishing.jpg" alt="">
+                <span>Reconoce el phishing</span>
+            </a>
+
+            <a href="#revisa-enlace" class="tema-seccion">
+                <img src="../../imagenes/phishing.jpg" alt="">
+                <span>Revisa un enlace</span>
+            </a>
+
+            <a href="#analiza-correo" class="tema-seccion">
+                <img src="../../imagenes/phishing.jpg" alt="">
+                <span>Analiza un correo ficticio</span>
+            </a>
+        </nav>
         <article>
-            <h1>Cómo reconocer un correo de phishing</h1>
+            <h1 id="reconoce-phishing">Cómo reconocer un correo de phishing</h1>
             <figure>
                 <img src="../../imagenes/phishing.jpg" alt="Correo electrónico sospechoso que intenta suplantar a una empresa">
                 <figcaption>
@@ -29,22 +56,66 @@
 
             <p>El phishing es un engaño que suplanta a una entidad o persona de confianza para conseguir información o provocar una acción, como abrir un enlace o descargar un archivo.</p>
 
-            <h2>La urgencia es una señal de alerta</h2>
+            <h2 id="revisa-enlace">La urgencia es una señal de alerta</h2>
             <p>Un mensaje puede afirmar que tu cuenta será bloqueada si no actúas inmediatamente. Esa presión busca que respondas sin comprobar antes si la petición es auténtica.</p>
 
-            <h2>El nombre del remitente no es suficiente</h2>
+            <h2 id="revisa-enlace">El nombre del remitente no es suficiente</h2>
             <p>Que un correo muestre el nombre de un banco o una empresa no demuestra su origen. Revisa la dirección completa del remitente y desconfía de dominios que imiten al original.</p>
 
-            <h2>Comprueba el destino de los enlaces</h2>
+            <h2 id="revisa-enlace">Comprueba el destino de los enlaces</h2>
             <p>En un ordenador, situar el puntero sobre un enlace sin pulsarlo suele permitir ver su destino. Una dirección extraña es una señal de alerta, pero una dirección aparentemente correcta tampoco garantiza que el mensaje sea legítimo.</p>
 
-            <h2>Cómo actuar ante un mensaje sospechoso</h2>
+            <h2 id="revisa-enlace">Cómo actuar ante un mensaje sospechoso</h2>
             <ul>
                 <li>No facilites contraseñas ni códigos de verificación.</li>
                 <li>Evita abrir sus enlaces y archivos adjuntos.</li>
                 <li>Accede al servicio desde su aplicación o escribiendo su dirección conocida en el navegador.</li>
                 <li>Comprueba la petición por un canal oficial independiente.</li>
             </ul>
+            <section id="analiza-correo">
+                <h2>Analiza un correo ficticio</h2>
+                <p>Lee el mensaje y piensa qué comprobarías antes de actuar.</p>
+
+                <div class="ejercicio-correo">
+                    <div class="correo-ficticio">
+                        <p class="aviso-ejemplo">Ejemplo ficticio</p>
+
+                        <p><strong>De:</strong> avisos@cuentas.example</p>
+                        <p><strong>Asunto:</strong> Verifica tu cuenta</p>
+
+                        <hr>
+
+                        <p>Hola:</p>
+                        <p>
+                            Tu cuenta será bloqueada hoy si no confirmas tus datos inmediatamente.
+                        </p>
+                        <p class="enlace-simulado">Revisar mi cuenta</p>
+                        <p>Equipo de atención al cliente</p>
+                    </div>
+
+                    <div>
+                        <button id="boton-pistas" class="boton-pistas" type="button" aria-expanded="false" aria-controls="pistas-correo" hidden>
+                Ver pistas
+            </button>
+
+                        <div id="pistas-correo">
+                            <h3>Qué conviene revisar</h3>
+
+                            <ol>
+                                <li>
+                                    <strong>El remitente.</strong> Comprueba si la dirección corresponde al servicio que afirma enviarte el mensaje.
+                                </li>
+                                <li>
+                                    <strong>La urgencia.</strong> La amenaza de un bloqueo busca que actúes antes de comprobar la petición.
+                                </li>
+                                <li>
+                                    <strong>El destino del enlace.</strong> El texto «Revisar mi cuenta» no muestra a dónde llevaría. Comprueba el destino antes de abrirlo.
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </article>
 
         <p><a href="../../index.html">Volver al inicio</a></p>
