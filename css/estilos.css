@@ -1,4 +1,4 @@
-/* 1. Estilos generales y páginas interiores */
+/* 1. BASE: tipografía, enlaces, cabecera, contenido y figuras */
 
 body {
     margin: 0;
@@ -94,8 +94,7 @@ figcaption {
     color: #526176;
 }
 
-
-/* 2. Carrusel de la portada */
+/* 2. PORTADA: carrusel de novedades y controles */
 
 .carrusel {
     margin-bottom: 10px;
@@ -191,20 +190,7 @@ figcaption {
     color: white;
 }
 
-@media (max-width: 650px) {
-    .destacado {
-        grid-template-columns: 1fr;
-    }
-    .destacado img {
-        height: 180px;
-    }
-    figure img {
-        width: 80%;
-    }
-}
-
-
-/* 3. Distribución de la portada */
+/* 3. PORTADA: fondo, título y espacio principal */
 
 .pagina-inicio {
     background-color: #faf8fc;
@@ -233,8 +219,7 @@ figcaption {
     border-radius: 0;
 }
 
-
-/* 4. Menú lateral y sección seleccionada */
+/* 4. PORTADA: menú lateral y opción iluminada */
 
 .pagina-inicio .menu-lateral {
     position: fixed;
@@ -274,35 +259,7 @@ figcaption {
     outline-offset: -4px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    .pagina-inicio .menu-lateral a {
-        transition: color 160ms ease, text-shadow 160ms ease;
-    }
-}
-
-
-/* Adaptación a pantallas pequeñas */
-
-@media (max-width: 800px) {
-    .pagina-inicio .cabecera-inicio {
-        margin-left: 0;
-        padding: 20px 16px;
-    }
-    .pagina-inicio .menu-lateral {
-        position: static;
-        flex-direction: row;
-        flex-wrap: wrap;
-        width: auto;
-        margin-top: 16px;
-        padding: 8px;
-    }
-    .pagina-inicio main {
-        margin: 0 16px 32px;
-    }
-}
-
-
-/* 5. Franja de temas y colores por sección */
+/* 5. PORTADA: tarjetas de temas y colores de cada sección */
 
 .explorador {
     --color-uno: #662ec7;
@@ -398,65 +355,7 @@ figcaption {
     outline-offset: -3px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    .tema-blog img,
-    .tema-blog-flecha {
-        transition: transform 200ms ease;
-    }
-    .tema-blog:hover img,
-    .tema-blog:focus-visible img {
-        transform: scale(1.04);
-    }
-    .tema-blog:hover .tema-blog-flecha,
-    .tema-blog:focus-visible .tema-blog-flecha {
-        transform: translateX(6px);
-    }
-}
-
-@media (max-width: 650px) {
-    .lista-temas {
-        grid-template-columns: 1fr;
-    }
-}
-
-
-/* 6. Medidas compactas de la portada en ordenador */
-
-@media (min-width: 801px) {
-    .pagina-inicio #titulo-entradas {
-        margin: 0 0 4px;
-        font-size: 1.4rem;
-    }
-    .pagina-inicio #descripcion-seccion {
-        margin: 0 0 10px;
-        line-height: 1.4;
-    }
-    .pagina-inicio .tema-blog img {
-        height: 125px;
-    }
-    .pagina-inicio .tema-blog-texto {
-        padding: 8px 14px;
-    }
-    .pagina-inicio .tema-blog h3 {
-        margin-bottom: 4px;
-        font-size: 1.1rem;
-    }
-    .pagina-inicio .tema-blog p {
-        font-size: 0.9rem;
-        line-height: 1.3;
-    }
-    .pagina-inicio .tema-blog-flecha {
-        margin-top: 2px;
-        font-size: 1.1rem;
-        line-height: 1;
-    }
-    .pagina-inicio main {
-        margin-bottom: 8px;
-    }
-}
-
-
-/* Página interior de Seguridad */
+/* 6. PÁGINAS INTERIORES: ventana de contenido */
 
 .pagina-seccion {
     background-color: var(--color-seccion);
@@ -472,17 +371,7 @@ figcaption {
     border-radius: 0 0 16px 16px;
 }
 
-@media (max-width: 650px) {
-    .pagina-seccion {
-        padding: 12px;
-    }
-    .pagina-seccion main {
-        padding: 20px;
-    }
-}
-
-
-/* Barra superior de la ventana de Seguridad */
+/* 7. PÁGINAS INTERIORES: barra y menú desplegable */
 
 .pagina-seccion .barra-seccion {
     position: sticky;
@@ -551,21 +440,7 @@ figcaption {
     outline-offset: 4px;
 }
 
-@media (max-width: 650px) {
-    .pagina-seccion .barra-seccion {
-        grid-template-columns: 1fr auto;
-        padding: 16px 20px;
-    }
-    .nombre-seccion {
-        justify-self: end;
-    }
-    .selector-seccion {
-        grid-column: 1 / -1;
-    }
-}
-
-
-/* Temas de la página de Seguridad */
+/* 8. PÁGINAS INTERIORES: tarjetas de navegación y anclas */
 
 .pagina-seccion .temas-seccion {
     display: grid;
@@ -622,14 +497,7 @@ figcaption {
     scroll-margin-top: 150px;
 }
 
-@media (max-width: 650px) {
-    .pagina-seccion .temas-seccion {
-        grid-template-columns: 1fr;
-    }
-    .tema-seccion {
-        min-height: 80px;
-    }
-}
+/* Colores de las ventanas interiores */
 
 .pagina-seguridad {
     --color-seccion: #d8fa42;
@@ -647,8 +515,7 @@ figcaption {
     --color-seccion: #b68af5;
 }
 
-
-/* Ejercicio del correo ficticio */
+/* 9. SEGURIDAD: ejercicio de correo y botón de pistas */
 
 .ejercicio-correo {
     display: grid;
@@ -698,11 +565,7 @@ figcaption {
     margin-bottom: 16px;
 }
 
-@media (max-width: 650px) {
-    .ejercicio-correo {
-        grid-template-columns: 1fr;
-    }
-}
+/* 10. OSINT: vídeo y atribución de la fuente */
 
 .video-osint {
     display: block;
@@ -717,4 +580,165 @@ figcaption {
     margin-top: 8px;
     font-size: 0.85rem;
     color: #526176;
+}
+
+/* 11. ADAPTACIÓN: pantallas y preferencias de movimiento */
+
+/* Móvil: carrusel y figuras */
+
+@media (max-width: 650px) {
+    .destacado {
+        grid-template-columns: 1fr;
+    }
+    .destacado img {
+        height: 180px;
+    }
+    figure img {
+        width: 80%;
+    }
+}
+
+/* Movimiento opcional: iluminación del menú */
+
+@media (prefers-reduced-motion: no-preference) {
+    .pagina-inicio .menu-lateral a {
+        transition: color 160ms ease, text-shadow 160ms ease;
+    }
+}
+
+/* Tableta y móvil: distribución de la portada */
+
+@media (max-width: 800px) {
+    .pagina-inicio .cabecera-inicio {
+        margin-left: 0;
+        padding: 20px 16px;
+    }
+    .pagina-inicio .menu-lateral {
+        position: static;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: auto;
+        margin-top: 16px;
+        padding: 8px;
+    }
+    .pagina-inicio main {
+        margin: 0 16px 32px;
+    }
+}
+
+/* Movimiento opcional: imágenes y flechas */
+
+@media (prefers-reduced-motion: no-preference) {
+    .tema-blog img,
+    .tema-blog-flecha {
+        transition: transform 200ms ease;
+    }
+    .tema-blog:hover img,
+    .tema-blog:focus-visible img {
+        transform: scale(1.04);
+    }
+    .tema-blog:hover .tema-blog-flecha,
+    .tema-blog:focus-visible .tema-blog-flecha {
+        transform: translateX(6px);
+    }
+}
+
+/* Móvil: tarjetas de la portada */
+
+@media (max-width: 650px) {
+    .lista-temas {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Ordenador: portada compacta */
+
+@media (min-width: 801px) {
+    /* Ajusta aquí el espacio vertical de la portada en ordenador.
+       Se permite el scroll si la pantalla es baja o el texto aumenta. */
+    .pagina-inicio .cabecera-inicio {
+        padding-top: 16px;
+        padding-bottom: 12px;
+    }
+    .pagina-inicio .destacado img {
+        height: 220px;
+    }
+    .pagina-inicio .destacado-texto {
+        padding: 16px 24px;
+    }
+    .pagina-inicio #titulo-entradas {
+        margin: 0 0 4px;
+        font-size: 1.4rem;
+    }
+    .pagina-inicio #descripcion-seccion {
+        margin: 0 0 10px;
+        line-height: 1.4;
+    }
+    .pagina-inicio .tema-blog img {
+        height: 125px;
+    }
+    .pagina-inicio .tema-blog-texto {
+        padding: 8px 14px;
+    }
+    .pagina-inicio .tema-blog h3 {
+        margin-bottom: 4px;
+        font-size: 1.1rem;
+    }
+    .pagina-inicio .tema-blog p {
+        font-size: 0.9rem;
+        line-height: 1.3;
+    }
+    .pagina-inicio .tema-blog-flecha {
+        margin-top: 2px;
+        font-size: 1.1rem;
+        line-height: 1;
+    }
+    .pagina-inicio main {
+        margin-bottom: 4px;
+    }
+}
+
+/* Móvil: contenido interior */
+
+@media (max-width: 650px) {
+    .pagina-seccion {
+        padding: 12px;
+    }
+    .pagina-seccion main {
+        padding: 20px;
+    }
+}
+
+/* Móvil: barra interior */
+
+@media (max-width: 650px) {
+    .pagina-seccion .barra-seccion {
+        grid-template-columns: 1fr auto;
+        padding: 16px 20px;
+    }
+    .nombre-seccion {
+        justify-self: end;
+    }
+    .selector-seccion {
+        grid-column: 1 / -1;
+    }
+}
+
+/* Móvil: navegación por temas */
+
+@media (max-width: 650px) {
+    .pagina-seccion .temas-seccion {
+        grid-template-columns: 1fr;
+    }
+    .tema-seccion {
+        min-height: 80px;
+    }
+}
+
+/* Móvil: ejercicio de Seguridad */
+
+@media (max-width: 650px) {
+    .ejercicio-correo {
+        grid-template-columns: 1fr;
+    }
 }
