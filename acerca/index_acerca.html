@@ -8,22 +8,53 @@
     <link rel="stylesheet" href="../css/estilos.css">
 </head>
 
-<body>
-    <header>
-        <p>Mi rincón tecnológico</p>
+<body class="pagina-seccion pagina-acerca">
+    <header class="barra-seccion">
+        <a href="../index.html?seccion=acerca">← Inicio</a>
 
-        <nav aria-label="Navegación principal">
-            <a href="../index.html">Inicio</a>
-        </nav>
+        <span class="nombre-seccion">Acerca de mí</span>
+
+        <details class="selector-seccion">
+            <summary>Cambiar de sección</summary>
+
+            <nav aria-label="Cambiar de sección">
+                <a href="../entradas/primera-pagina-web/index.html">
+                Web
+            </a>
+                <a href="../entradas/reconocer-phishing/index.html">
+                Seguridad
+            </a>
+                <a href="../entradas/maquinas-virtuales/index_virtualizacion.html">
+                Virtualización
+            </a>
+            </nav>
+        </details>
     </header>
 
     <main>
 
         <h1>Acerca de mí</h1>
-        <p>Estudio Ingeniería Informática y me interesan las redes, la seguridad y los sistemas.</p>
-        <p>Creé Mi rincón tecnológico para compartir lo que voy aprendiendo con ejemplos sencillos. Aquí escribo sobre cómo funciona la web, cómo reconocer un correo sospechoso y cómo practicar con máquinas virtuales.</p>
 
-        <p><a href="../index.html">Volver al inicio</a></p>
+        <section id="quien-soy">
+            <h2>Quién soy</h2>
+            <p>
+                Soy estudiante de Ingeniería Informática y me interesan especialmente las redes, la seguridad y los sistemas.
+            </p>
+        </section>
+
+        <section id="aprendiendo">
+            <h2>Qué estoy aprendiendo</h2>
+            <p>
+                Estoy aprendiendo cómo se comunican los equipos, cómo reconocer amenazas y cómo practicar con otros sistemas operativos mediante máquinas virtuales.
+            </p>
+        </section>
+
+        <section id="sobre-blog">
+            <h2>Por qué este blog</h2>
+            <p>
+                Creé Mi rincón tecnológico para compartir lo que voy aprendiendo con ejemplos sencillos. También es una oportunidad para practicar HTML, CSS y JavaScript.
+            </p>
+        </section>
     </main>
 
     <footer>

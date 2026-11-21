@@ -8,16 +8,42 @@
     <link rel="stylesheet" href="../../css/estilos.css">
 </head>
 
-<body>
-    <header>
-        <p>Mi rincón tecnológico</p>
+<body class="pagina-seccion pagina-web">
+    <header class="barra-seccion">
+        <a href="../../index.html?seccion=web">← Inicio</a>
 
-        <nav aria-label="Navegación principal">
-            <a href="../../index.html">Inicio</a>
-        </nav>
+        <span class="nombre-seccion">Web</span>
+
+        <details class="selector-seccion">
+            <summary>Cambiar de sección</summary>
+
+            <nav aria-label="Cambiar de sección">
+                <a href="../reconocer-phishing/index.html">Seguridad</a>
+                <a href="../maquinas-virtuales/index_virtualizacion.html">
+                Virtualización
+            </a>
+                <a href="../../acerca/index_acerca.html">Acerca de mí</a>
+            </nav>
+        </details>
     </header>
 
     <main>
+        <nav class="temas-seccion" aria-label="Temas de Web">
+            <a href="#navegador" class="tema-seccion">
+                <img src="../../imagenes/web.jpg" alt="">
+                <span>Qué pide el navegador</span>
+            </a>
+
+            <a href="#servidor" class="tema-seccion">
+                <img src="../../imagenes/web.jpg" alt="">
+                <span>La respuesta del servidor</span>
+            </a>
+
+            <a href="#html-css" class="tema-seccion">
+                <img src="../../imagenes/web.jpg" alt="">
+                <span>HTML y CSS</span>
+            </a>
+        </nav>
         <article>
             <h1>¿Qué ocurre cuando abres una página web?</h1>
             <figure>
@@ -26,13 +52,13 @@
             </figure>
             <p>Una explicación sencilla del viaje entre tu navegador y el servidor que entrega una página.</p>
 
-            <h2>El navegador actúa como cliente</h2>
+            <h2 id="navegador">El navegador actúa como cliente</h2>
             <p>Cuando visitas una dirección, tu navegador solicita los recursos necesarios para mostrar la página. En esta comunicación, el navegador actúa como cliente.</p>
 
-            <h2>El servidor responde a la petición</h2>
+            <h2 id="servidor">El servidor responde a la petición</h2>
             <p>El servidor recibe una petición HTTP y devuelve una respuesta. Esta incluye un código de estado y puede contener un recurso, como un documento HTML.</p>
 
-            <h2>HTML y CSS tienen funciones diferentes</h2>
+            <h2 id="html-css">HTML y CSS tienen funciones diferentes</h2>
             <p>HTML estructura el contenido: títulos, párrafos, imágenes y enlaces. CSS define su presentación: colores, tamaños, espacios y distribución.</p>
 
             <h2>Un ejemplo con este blog</h2>

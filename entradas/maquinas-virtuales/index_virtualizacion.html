@@ -8,18 +8,42 @@
     <link rel="stylesheet" href="../../css/estilos.css">
 </head>
 
-<body>
-    <header>
-        <p>Mi rincón tecnológico</p>
+<body class="pagina-seccion pagina-virtualizacion">
+    <header class="barra-seccion">
+        <a href="../../index.html?seccion=virtualizacion">← Inicio</a>
 
-        <nav aria-label="Navegación principal">
-            <a href="../../index.html">Inicio</a>
-        </nav>
+        <span class="nombre-seccion">Virtualización</span>
+
+        <details class="selector-seccion">
+            <summary>Cambiar de sección</summary>
+
+            <nav aria-label="Cambiar de sección">
+                <a href="../primera-pagina-web/index.html">Web</a>
+                <a href="../reconocer-phishing/index.html">Seguridad</a>
+                <a href="../../acerca/index_acerca.html">Acerca de mí</a>
+            </nav>
+        </details>
     </header>
 
     <main>
+        <nav class="temas-seccion" aria-label="Temas de Virtualización">
+            <a href="#maquina-virtual" class="tema-seccion">
+                <img src="../../imagenes/virtualizacion.jpg" alt="">
+                <span>Qué es una máquina virtual</span>
+            </a>
+
+            <a href="#hipervisor" class="tema-seccion">
+                <img src="../../imagenes/virtualizacion.jpg" alt="">
+                <span>El papel del hipervisor</span>
+            </a>
+
+            <a href="#windows-ubuntu" class="tema-seccion">
+                <img src="../../imagenes/virtualizacion.jpg" alt="">
+                <span>Windows y Ubuntu</span>
+            </a>
+        </nav>
         <article>
-            <h1>Qué es una máquina virtual</h1>
+            <h1 id="maquina-virtual">Qué es una máquina virtual</h1>
             <figure>
                 <img src="../../imagenes/virtualizacion.jpg" alt="Ubuntu ejecutándose en una máquina virtual de VirtualBox">
                 <figcaption>
@@ -32,7 +56,7 @@
             <h2>El anfitrión y el invitado</h2>
             <p>El ordenador físico que proporciona los recursos se llama anfitrión. El sistema operativo que se ejecuta dentro de la máquina virtual se llama invitado.</p>
 
-            <h2>La función del hipervisor</h2>
+            <h2 id="hipervisor">La función del hipervisor</h2>
             <p>El hipervisor es el software que permite crear y ejecutar máquinas virtuales y gestionar su acceso a los recursos del equipo físico.</p>
 
             <ul>
@@ -40,7 +64,7 @@
                 <li>Tipo 2: se ejecuta sobre un sistema operativo anfitrión, como una aplicación.</li>
             </ul>
 
-            <h2>Un ejemplo con Windows y Ubuntu</h2>
+            <h2 id="windows-ubuntu">Un ejemplo con Windows y Ubuntu</h2>
             <p>Si utilizas VirtualBox en Windows para ejecutar Ubuntu, tu ordenador proporciona el hardware, Windows es el sistema operativo anfitrión, VirtualBox actúa como hipervisor de tipo 2 y Ubuntu es el sistema invitado.</p>
 
             <h2>Para qué sirve</h2>

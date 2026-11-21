@@ -96,19 +96,19 @@ const secciones = {
                 titulo: "Qué pide el navegador",
                 resumen: "El viaje que comienza al abrir una página.",
                 imagen: "./imagenes/web.jpg",
-                enlace: paginaWeb
+                enlace: paginaWeb + "#navegador"
             },
             {
                 titulo: "La respuesta del servidor",
                 resumen: "Qué devuelve el servidor a una petición.",
                 imagen: "./imagenes/web.jpg",
-                enlace: paginaWeb
+                enlace: paginaWeb + "#servidor"
             },
             {
                 titulo: "HTML y CSS",
                 resumen: "Cómo se organizan el contenido y su presentación.",
                 imagen: "./imagenes/web.jpg",
-                enlace: paginaWeb
+                enlace: paginaWeb + "#html-css"
             }
         ]
     },
@@ -144,19 +144,19 @@ const secciones = {
                 titulo: "Qué es una máquina virtual",
                 resumen: "Cómo se utilizan los recursos del equipo físico.",
                 imagen: "./imagenes/virtualizacion.jpg",
-                enlace: paginaVirtualizacion
+                enlace: paginaVirtualizacion + "#maquina-virtual"
             },
             {
                 titulo: "El papel del hipervisor",
                 resumen: "La herramienta que permite ejecutar la máquina virtual.",
                 imagen: "./imagenes/virtualizacion.jpg",
-                enlace: paginaVirtualizacion
+                enlace: paginaVirtualizacion + "#hipervisor"
             },
             {
                 titulo: "Windows y Ubuntu",
                 resumen: "Un ejemplo de anfitrión y sistema invitado.",
                 imagen: "./imagenes/virtualizacion.jpg",
-                enlace: paginaVirtualizacion
+                enlace: paginaVirtualizacion + "#windows-ubuntu"
             }
         ]
     },
@@ -168,19 +168,19 @@ const secciones = {
                 titulo: "Quién soy",
                 resumen: "Mi interés por la informática.",
                 imagen: "./imagenes/web.jpg",
-                enlace: paginaAcerca
+                enlace: paginaAcerca + "#quien-soy"
             },
             {
                 titulo: "Qué estoy aprendiendo",
                 resumen: "Redes, seguridad y sistemas.",
                 imagen: "./imagenes/virtualizacion.jpg",
-                enlace: paginaAcerca
+                enlace: paginaAcerca + "#aprendiendo"
             },
             {
                 titulo: "Por qué este blog",
                 resumen: "Compartir lo que aprendo con ejemplos sencillos.",
                 imagen: "./imagenes/phishing.jpg",
-                enlace: paginaAcerca
+                enlace: paginaAcerca + "#sobre-blog"
             }
         ]
     }
@@ -248,4 +248,11 @@ enlacesMenu.forEach((opcion) => {
     });
 });
 
-mostrarSeccion("inicio");
+const parametros = new URLSearchParams(window.location.search);
+const seccionSolicitada = parametros.get("seccion");
+
+const seccionInicial = Object.hasOwn(secciones, seccionSolicitada) ?
+    seccionSolicitada :
+    "inicio";
+
+mostrarSeccion(seccionInicial);

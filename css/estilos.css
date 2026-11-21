@@ -447,13 +447,13 @@ figcaption {
 
 /* Página interior de Seguridad */
 
-.pagina-seguridad {
-    background-color: #d8fa42;
+.pagina-seccion {
+    background-color: var(--color-seccion);
     color: #21152c;
     padding: 24px;
 }
 
-.pagina-seguridad main {
+.pagina-seccion main {
     max-width: 1100px;
     margin: 0 auto;
     padding: 32px;
@@ -462,10 +462,10 @@ figcaption {
 }
 
 @media (max-width: 650px) {
-    .pagina-seguridad {
+    .pagina-seccion {
         padding: 12px;
     }
-    .pagina-seguridad main {
+    .pagina-seccion main {
         padding: 20px;
     }
 }
@@ -473,7 +473,7 @@ figcaption {
 
 /* Barra superior de la ventana de Seguridad */
 
-.pagina-seguridad .barra-seccion {
+.pagina-seccion .barra-seccion {
     position: sticky;
     top: 0;
     z-index: 20;
@@ -541,7 +541,7 @@ figcaption {
 }
 
 @media (max-width: 650px) {
-    .pagina-seguridad .barra-seccion {
+    .pagina-seccion .barra-seccion {
         grid-template-columns: 1fr auto;
         padding: 16px 20px;
     }
@@ -556,7 +556,7 @@ figcaption {
 
 /* Temas de la página de Seguridad */
 
-.pagina-seguridad .temas-seccion {
+.pagina-seccion .temas-seccion {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 4px;
@@ -607,17 +607,33 @@ figcaption {
     outline-offset: -3px;
 }
 
-.pagina-seguridad [id] {
+.pagina-seccion [id] {
     scroll-margin-top: 150px;
 }
 
 @media (max-width: 650px) {
-    .pagina-seguridad .temas-seccion {
+    .pagina-seccion .temas-seccion {
         grid-template-columns: 1fr;
     }
     .tema-seccion {
         min-height: 80px;
     }
+}
+
+.pagina-seguridad {
+    --color-seccion: #d8fa42;
+}
+
+.pagina-web {
+    --color-seccion: #662ec7;
+}
+
+.pagina-virtualizacion {
+    --color-seccion: #ff8a45;
+}
+
+.pagina-acerca {
+    --color-seccion: #b68af5;
 }
 
 
