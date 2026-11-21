@@ -81,8 +81,10 @@ figure {
 
 figure img {
     display: block;
+    width: 30%;
     max-width: 100%;
     height: auto;
+    margin: 0;
     border-radius: 8px;
 }
 
@@ -195,6 +197,9 @@ figcaption {
     }
     .destacado img {
         height: 180px;
+    }
+    figure img {
+        width: 80%;
     }
 }
 

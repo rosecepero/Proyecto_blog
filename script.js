@@ -182,19 +182,19 @@ const secciones = {
         temas: [{
                 titulo: "Quién soy",
                 resumen: "Mi interés por la informática.",
-                imagen: "./imagenes/web.jpg",
+                imagen: "./imagenes/acerca-personal.png",
                 enlace: paginaAcerca + "#quien-soy"
             },
             {
                 titulo: "Qué estoy aprendiendo",
                 resumen: "Redes, seguridad y sistemas.",
-                imagen: "./imagenes/virtualizacion.jpg",
+                imagen: "./imagenes/acerca-aprendizaje.png",
                 enlace: paginaAcerca + "#aprendiendo"
             },
             {
                 titulo: "Por qué este blog",
                 resumen: "Compartir lo que aprendo con ejemplos sencillos.",
-                imagen: "./imagenes/phishing.jpg",
+                imagen: "./imagenes/acerca-blog.png",
                 enlace: paginaAcerca + "#sobre-blog"
             }
         ]
