@@ -147,6 +147,11 @@ figcaption {
     outline-offset: 3px;
 }
 
+#destacado-imagen[src$="osint-avion.png"] {
+    object-fit: cover;
+    object-position: center 45%;
+}
+
 .destacado h2 {
     margin: 0;
     font-size: clamp(1.25rem, 2.1vw, 1.75rem);
@@ -422,22 +427,23 @@ figcaption {
         line-height: 1.4;
     }
     .pagina-inicio .tema-blog img {
-        height: 85px;
+        height: 125px;
     }
     .pagina-inicio .tema-blog-texto {
-        padding: 10px 14px;
+        padding: 8px 14px;
     }
     .pagina-inicio .tema-blog h3 {
-        margin-bottom: 6px;
+        margin-bottom: 4px;
         font-size: 1.1rem;
     }
     .pagina-inicio .tema-blog p {
         font-size: 0.9rem;
-        line-height: 1.35;
+        line-height: 1.3;
     }
     .pagina-inicio .tema-blog-flecha {
-        margin-top: 6px;
-        font-size: 1.3rem;
+        margin-top: 2px;
+        font-size: 1.1rem;
+        line-height: 1;
     }
     .pagina-inicio main {
         margin-bottom: 8px;
@@ -691,4 +697,19 @@ figcaption {
     .ejercicio-correo {
         grid-template-columns: 1fr;
     }
+}
+
+.video-osint {
+    display: block;
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    margin: 24px auto;
+    border-radius: 8px;
+}
+
+.credito-video {
+    margin-top: 8px;
+    font-size: 0.85rem;
+    color: #526176;
 }

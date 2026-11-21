@@ -1,26 +1,27 @@
 const destacados = [{
-        tema: "Web · Nuevo en el blog",
-        titulo: "Del navegador al servidor",
-        resumen: "Descubre qué ocurre cuando abres una página y qué función cumplen HTML y CSS.",
-        enlace: "./entradas/primera-pagina-web/index.html",
-        imagen: "./imagenes/web.jpg",
-        alt: "Tecnología relacionada con la navegación web"
+
+        tema: "Actualidad IA · 19/11/2026",
+        titulo: "La IA también se ejecuta en el navegador",
+        resumen: "Microsoft presenta Aion Instruct en Edge para incorporar funciones de IA que se ejecutan en el propio dispositivo.",
+        enlace: "https://blogs.windows.com/msedgedev/2026/11/19/hybrid-intelligence-on-the-web-introducing-aion-instruct-and-prompt-api-in-microsoft-edge/",
+        imagen: "./imagenes/novedad-ia.png",
+        alt: "Hilos morados atraviesan una pieza de vidrio y se unen en un hilo verde lima"
     },
     {
-        tema: "Seguridad · Lectura destacada",
-        titulo: "Antes de pulsar, revisa",
-        resumen: "Un mensaje urgente merece una segunda mirada. Aprende a reconocer las señales del phishing.",
-        enlace: "./entradas/reconocer-phishing/index.html",
-        imagen: "./imagenes/phishing.jpg",
-        alt: "Imagen sobre phishing"
+        tema: "Aplicaciones · 25/09/2026",
+        titulo: "Copilot reúne Home, Code y Autopilot",
+        resumen: "Microsoft presenta una renovación de Copilot para conversar, crear soluciones y delegar tareas, con un despliegue gradual.",
+        enlace: "https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/",
+        imagen: "./imagenes/novedad-aplicacion.png",
+        alt: "Una cinta de vidrio curvada rodea papeles y un bolígrafo entre reflejos malva y cobre"
     },
     {
-        tema: "Virtualización · Para experimentar",
-        titulo: "Ubuntu dentro de Windows",
-        resumen: "Conoce cómo funciona una máquina virtual antes de preparar tu propia práctica.",
-        enlace: "./entradas/maquinas-virtuales/index_virtualizacion.html",
-        imagen: "./imagenes/virtualizacion.jpg",
-        alt: "Imagen que acompaña la entrada sobre virtualización"
+        tema: "Mi trabajo · Investigación OSINT",
+        titulo: "¿Qué puede revelar un vídeo de pocos segundos?",
+        resumen: "Así investigué las pistas de un vídeo mediante fuentes abiertas para mi trabajo de Seguridad de la Información.",
+        enlace: "./entradas/investigacion-osint/index.html",
+        imagen: "./imagenes/osint-avion.png",
+        alt: "Avión con el nombre de la aerolínea y la matrícula señalados en amarillo"
     }
 ];
 
@@ -41,6 +42,19 @@ function mostrarDestacado() {
     titulo.textContent = entrada.titulo;
     resumen.textContent = entrada.resumen;
     enlace.href = entrada.enlace;
+    const esExterno = entrada.enlace.startsWith("https://");
+
+    if (esExterno) {
+        enlace.target = "_blank";
+        enlace.rel = "noopener noreferrer";
+        enlace.textContent = "Leer noticia ↗";
+        enlace.setAttribute("aria-label", "Leer noticia, abre en otra pestaña");
+    } else {
+        enlace.removeAttribute("target");
+        enlace.removeAttribute("rel");
+        enlace.textContent = "Ver publicación →";
+        enlace.removeAttribute("aria-label");
+    }
     imagen.src = entrada.imagen;
     imagen.alt = entrada.alt;
     indicador.textContent = `${posicion + 1} de ${destacados.length} · ${entrada.tema}`;
@@ -71,20 +85,21 @@ const secciones = {
         temas: [{
                 titulo: "Entiende cómo funciona",
                 resumen: "Descubre qué ocurre cuando visitas una página web.",
-                imagen: "./imagenes/web.jpg",
+                imagen: "./imagenes/web-navegador.png",
                 enlace: paginaWeb
+            },
+
+            {
+                titulo: "Aprende a protegerte",
+                resumen: "Revisa las señales de un correo sospechoso.",
+                imagen: "./imagenes/seguridad-sobre.png",
+                enlace: paginaSeguridad
             },
             {
                 titulo: "Ponlo a prueba",
                 resumen: "Experimenta con otro sistema operativo en una máquina virtual.",
-                imagen: "./imagenes/virtualizacion.jpg",
+                imagen: "./imagenes/virtualizacion-practica.png",
                 enlace: paginaVirtualizacion
-            },
-            {
-                titulo: "Aprende a protegerte",
-                resumen: "Revisa las señales de un correo sospechoso.",
-                imagen: "./imagenes/phishing.jpg",
-                enlace: paginaSeguridad
             }
         ]
     },
@@ -95,19 +110,19 @@ const secciones = {
         temas: [{
                 titulo: "Qué pide el navegador",
                 resumen: "El viaje que comienza al abrir una página.",
-                imagen: "./imagenes/web.jpg",
+                imagen: "./imagenes/web-navegador.png",
                 enlace: paginaWeb + "#navegador"
             },
             {
                 titulo: "La respuesta del servidor",
                 resumen: "Qué devuelve el servidor a una petición.",
-                imagen: "./imagenes/web.jpg",
+                imagen: "./imagenes/web-servidor.png",
                 enlace: paginaWeb + "#servidor"
             },
             {
                 titulo: "HTML y CSS",
                 resumen: "Cómo se organizan el contenido y su presentación.",
-                imagen: "./imagenes/web.jpg",
+                imagen: "./imagenes/web-codigo.png",
                 enlace: paginaWeb + "#html-css"
             }
         ]
@@ -119,19 +134,19 @@ const secciones = {
         temas: [{
                 titulo: "Reconoce el phishing",
                 resumen: "Identifica cómo intentan ganarse tu confianza.",
-                imagen: "./imagenes/phishing.jpg",
+                imagen: "./imagenes/seguridad-sobre.png",
                 enlace: paginaSeguridad + "#reconoce-phishing"
             },
             {
                 titulo: "Revisa un enlace",
                 resumen: "Comprueba a dónde te invita a ir un mensaje.",
-                imagen: "./imagenes/phishing.jpg",
+                imagen: "./imagenes/seguridad-enlace.png",
                 enlace: paginaSeguridad + "#revisa-enlace"
             },
             {
                 titulo: "Analiza un correo ficticio",
                 resumen: "Practica buscando sus señales de alerta.",
-                imagen: "./imagenes/phishing.jpg",
+                imagen: "./imagenes/seguridad-correo.png",
                 enlace: paginaSeguridad + "#analiza-correo"
             }
         ]
@@ -143,19 +158,19 @@ const secciones = {
         temas: [{
                 titulo: "Qué es una máquina virtual",
                 resumen: "Cómo se utilizan los recursos del equipo físico.",
-                imagen: "./imagenes/virtualizacion.jpg",
+                imagen: "./imagenes/virtualizacion-maquina.png",
                 enlace: paginaVirtualizacion + "#maquina-virtual"
             },
             {
                 titulo: "El papel del hipervisor",
                 resumen: "La herramienta que permite ejecutar la máquina virtual.",
-                imagen: "./imagenes/virtualizacion.jpg",
+                imagen: "./imagenes/virtualizacion-hipervisor.png",
                 enlace: paginaVirtualizacion + "#hipervisor"
             },
             {
                 titulo: "Windows y Ubuntu",
                 resumen: "Un ejemplo de anfitrión y sistema invitado.",
-                imagen: "./imagenes/virtualizacion.jpg",
+                imagen: "./imagenes/virtualizacion-practica.png",
                 enlace: paginaVirtualizacion + "#windows-ubuntu"
             }
         ]
@@ -229,7 +244,8 @@ function mostrarSeccion(nombre) {
         flecha.textContent = "→";
         flecha.setAttribute("aria-hidden", "true");
 
-        texto.append(titulo, resumen, flecha);
+        titulo.append(" ", flecha);
+        texto.append(titulo, resumen);
         bloque.append(foto, texto);
 
         return bloque;
